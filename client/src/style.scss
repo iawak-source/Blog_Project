@@ -1,0 +1,426 @@
+$lightGreen: #1fb7c2;
+$backgroundColor: #b0e0e6;
+
+.App {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 1024px;
+
+
+        .link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        // LOGIN AND REGISTER FORM
+        .auth {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: $backgroundColor;
+
+            h1 {
+                color: #005f5f;
+                font-size: 22px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                background-color: white;
+                width: 350px;
+                gap: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+                input {
+                    padding: 12px;
+                    font-size: 16px;
+                    border: none;
+                    border-bottom: 2px solid gray;
+                    outline: none;
+                    transition: border-bottom 0.3s ease-in-out;
+
+                    &:focus {
+                        border-bottom: 2px solid $lightGreen;
+                    }
+                }
+
+                button {
+                    padding: 12px;
+                    font-size: 16px;
+                    background-color: #00796b;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: #005f5f;
+                    }
+                }
+
+                span {
+                    font-size: 12px;
+                    text-align: center;
+                }
+
+                p {
+                    font-size: 12px;
+                    color: red;
+                    text-align: center;
+                }
+            }
+        }
+
+        //Navbar
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px; // Khoảng cách từ mép màn hình
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            .logo {
+                img {
+                    height: 80px;
+                    width: 100px; // Điều chỉnh kích thước logo
+                }
+            }
+
+            .links {
+                display: flex;
+                gap: 30px; // Tạo khoảng cách giữa các link
+                flex-grow: 1;
+                justify-content: flex-end; // Đẩy các link về phía bên phải
+
+                span {
+                    cursor: pointer;
+                }
+
+                .write {
+                    background-color: lightgreen;
+                    width: 50px;
+                    display: flex;
+
+                }
+            }
+
+            .link {
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: color 0.3s ease-in-out;
+                align-items: center;
+                border: solid 1px white;
+
+                &:hover {
+                    color: $lightGreen;
+                    border: solid 1px $lightGreen;
+                }
+            }
+        }
+
+        //Footer
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: $lightGreen;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+
+            img {
+                height: 80px;
+            }
+        }
+
+
+        //HOME PAGE
+        .home {
+            .posts {
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 150px;
+
+                .post {
+                    display: flex;
+                    gap: 100px;
+
+                    &:nth-child(2n+1) {
+                        flex-direction: row-reverse;
+                    }
+
+                    .img {
+                        flex: 2;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            background-color: $lightGreen;
+                            position: absolute;
+                            top: 20px;
+                            left: -20px;
+                            z-index: -1;
+
+                        }
+
+                        img {
+                            width: 100%;
+                            max-height: 400px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .content {
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        h1 {
+                            font-size: 48px;
+                        }
+
+                        p {
+                            font-size: 18px;
+                        }
+
+                        button {
+                            width: max-content;
+                            padding: 10px 20px;
+                            border: none;
+                            cursor: pointer;
+                            background-color: white;
+                            border: 1px solid $lightGreen;
+                            color: teal;
+
+
+                            &:hover {
+                                border: 1px solid white;
+                                background-color: $lightGreen;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        //SINGLE PAGE
+        .single {
+            display: flex;
+            gap: 50px;
+
+
+            .content {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 300px;
+
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .edit {
+                    display: flex;
+                    gap: 5px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                h1 {
+                    font-size: 48px;
+                    color: #333;
+                }
+
+                p {
+                    text-align: justify;
+                    line-height: 30px;
+                }
+            }
+
+            .menu {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                h1 {
+                    font-size: 20px;
+                    color: #555;
+                }
+
+                .post {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                        height: 200px;
+                    }
+
+                    h2 {
+                        color: #555;
+                    }
+
+                    button {
+                        width: max-content;
+                        padding: 7.5px 20px;
+                        border: none;
+                        cursor: pointer;
+                        background-color: white;
+                        border: 1px solid $lightGreen;
+                        color: teal;
+
+
+                        &:hover {
+                            border: 1px solid white;
+                            background-color: $lightGreen;
+                            color: black;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        //WRITE PAGE
+        .add {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+
+            .content {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input{
+                    padding: 10px;
+                    border: 1px solid lightgray;
+                }
+
+                .editorContainer {
+                    height: 500px;
+                    overflow: hidden;
+                    border: 1px solid lightgray;
+                    .editor{
+                        height: 100%;
+                        border: none;
+
+                    }
+
+                }
+            }
+
+            .menu {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .item{
+                    border: 1px solid lightgray;
+                    padding: 10px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-size: 15px;
+                    color: #555;
+                     
+
+                    h1{
+                        font-size: 20px;
+                    }
+                    .file{
+                       text-decoration: underline; 
+                       cursor: pointer;
+                    }
+
+                    .buttons{
+                        display: flex;
+                        justify-content: space-between;
+
+                        :first-child{
+                            cursor: pointer;
+                            color: teal;
+                            background-color: white;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+                        :last-child{
+                            cursor: pointer;
+                            color: white;
+                            background-color: teal;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+                    }
+
+                    .cat{
+                        display: flex;
+                        align-items: center;
+                        gap: 2px;
+                        color: teal;
+                        font-size: 15px;
+
+                    }
+                }
+            }
+                        .footer{
+                .footer-text{
+                    font-size: 3002px;
+                    color: #555;
+                }
+            }
+
+        }
+    }
+
+}
